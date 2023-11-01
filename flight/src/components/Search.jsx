@@ -50,7 +50,7 @@ const handleIconClick = () => {
 };
 
   return (
-     <div className="flex justify-center items-center h-screen bg-grey">
+     <div className="flex justify-center items-center h-screen bg-grey overflow-hidden">
      
      <div className="pt-8 pb-10 p-relative px-10 px-4--xs pt-4--xs pb-4--xs home-search-banner" style={{ background: 'rgb(255, 255, 255)', border: '1px solid rgb(230, 230, 230)', boxShadow: 'rgba(0, 0, 0, 0.04) 0px 8px 16px', borderRadius: '12px' }}>
       <div className='text-center mb-8'>
@@ -72,7 +72,7 @@ const handleIconClick = () => {
           </button>
         </div>
         
-        <div className="dropdown-container h-13 bc-neutral-100 flex ba mb-5"  style={{ border: '1px solid #e2e8f0' }}>
+        <div className="dropdown-container h-13 bc-neutral-100 flex ba mb-5 relative"  style={{ border: '1px solid #e2e8f0' }}>
      
           <div className="field-1 flex flex-middle p-relative pr-4 w-100p ">
           <div className="flex items-center">
@@ -88,7 +88,7 @@ const handleIconClick = () => {
               </svg>
             </div>
             </div>
-            <div className="relative">
+            <div className="relative ">
           <input
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
             placeholder="Where from?"
@@ -97,7 +97,7 @@ const handleIconClick = () => {
             onClick={toggleDropdown}
           />
           {isOpen && (
-            <div className="absolute w-full max-h-96 overflow-y-auto bg-white border border-gray-300 rounded-md mt-1" style={{ width: '550px' }}>
+            <div className="md:absolute max-h-96  bg-white border border-gray-300 rounded-md mt-1 w-full overflow-auto" >
               {filteredResults.slice(0, 5).map((item, index) => (
                 <div
                   key={index}
@@ -233,7 +233,7 @@ const handleIconClick = () => {
                 onClick={toggleDropdownTo}
               />
               {isOpenTo && (
-                <div className="absolute w-full max-h-96 overflow-y-auto bg-white border border-gray-300 rounded-md mt-1" style={{ width: '550px' }}>
+                <div className=" md:absolute w-full max-h-96  bg-white border border-gray-300 rounded-md mt-1 overflow-auto" >
                   {filteredResultsTo.slice(0, 5).map((item, index) => (
                     <div
                       key={index}
